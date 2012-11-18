@@ -2029,6 +2029,33 @@ $+myjob/add *=*:
 			@trigger %va/TRIG_BROADCAST=%q0,%#,ADD
 		}
 -
+&CMD_MYJOB/CC [v(JOB_GO)]=
+$+myjob/cc *=*:
+	@switch 
+		[not(u(%va/FN_GUEST,%#))]
+		[setq(0,u(%va/FN_FIND-JOB,%0))]
+		[isdbref(%q0)]
+		[or(
+			and(u(%va/IS_PUBLIC,%q0),match(get(%q0/OPENED_BY),%#)),
+			u(%va/FN_MYACCESSCHECK,parent(%q0),%#,%q0),
+		)]
+		[not(u(%va/FN_HASATTR,%q0,LOCKED))]
+		[setq(1,map(%va/MAP_SOURCE,secure(trim(%1))))]
+		[setq(2,member(%q1,#-1))]
+		[not(gt(%q2,0))]
+		=
+		0*,@pemit %#=This command is not available to guests.,
+		10*,@pemit %#=That is an invalid job number.,
+		110*,@pemit %#=[name(%q0)] is not yours. You can only modify your own jobs.,
+		1110*,@pemit %#=That job is locked and cannot be changed at this time.,
+		11110*,{@pemit %#='[extract(secure(trim(%1)),%q2,1)]' is not a valid player or jgroup.},
+		{
+			&opened_by %q0=[setunion(get(%q0/opened_by),%q1)];
+			@pemit %#=You have set job #%0 to have a source of [u(%va/FN_PLAYERLIST,%q0)].;
+			@trigger %va/TRIG_ADD=%q0,Source changed to [u(%va/FN_PLAYERLIST,%q0)].,%#,SRC;
+			@trigger %va/TRIG_BROADCAST=%q0,%#,SRC,%q1
+		}
+-
 
 &CMD_MYJOB/HELP [v(JOB_GO)]=
 $+myjob/help *:
