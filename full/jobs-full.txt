@@ -2726,6 +2726,7 @@ think [ansi(hc,ANOMALY JOBS:)] Setting controlling attributes.
 		u(%q0/PUBLISH),
 		hasflag(%q0/%0,no_inherit),
 		u(%va/FN_MYACCESSCHECK,parent(%q0),%#,%q0),
+		t(member(u(%q0/OPENED_BY),extract(get(%q0/%0),3,1,|))),
 		strmatch(extract(get(%q0/%0),3,1,|),%#)
 	)
 -
@@ -4810,10 +4811,7 @@ think [ansi(hc,ANOMALY JOBS:)] Installing skins.
 				and(
 					or(
 						u(%va/IS_PUBLISHED,%1),
-						switch(
-							extract(get(%1/%0),3,1,|),
-							u(%1/OPENED_BY),1,
-							0),
+						t(member(u(%1/OPENED_BY),extract(get(%1/%0),3,1,|))),
 						hasflag(%1/%0,no_inherit)
 					),
 					u(%va/IS_PUBLIC,%1)
@@ -5088,11 +5086,7 @@ think [ansi(hc,ANOMALY JOBS:)] Installing skins.
 			and(
 				or(
 					u(%va/IS_PUBLISHED,%1),
-					switch(
-						extract(get(%1/%0),3,1,|),
-						u(%1/OPENED_BY),1,
-						0
-					),
+					t(member(u(%1/OPENED_BY),extract(get(%1/%0),3,1,|))),
 					hasflag(%1/%0,no_inherit)
 				),
 				u(%va/IS_PUBLIC,%1)
@@ -5257,11 +5251,7 @@ think [ansi(hc,ANOMALY JOBS:)] Installing skins.
 			and(
 				or(
 					u(%va/IS_PUBLISHED,%1),
-					switch(
-						extract(get(%1/%0),3,1,|),
-						u(%1/OPENED_BY),1,
-						0
-					),
+					t(member(u(%1/OPENED_BY),extract(get(%1/%0),3,1,|))),
 					hasflag(%1/%0,no_inherit)
 				),
 				u(%va/IS_PUBLIC,%1)
