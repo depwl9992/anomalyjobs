@@ -2660,13 +2660,11 @@ think [ansi(hc,ANOMALY JOBS:)] Setting controlling attributes.
 &FIL_MYJOBS [v(JOB_VA)]=
 	cor(
 		u(%va/FN_MYACCESSCHECK,parent(%0),%#,%0),
-		cor(
-			cand(
-				get([parent(%0)]/PUBLIC),
-				match(get(%0/OPENED_BY),%#)
-			),
-			u(%va/IS_TRANSPARENT,%0)
-		)
+		cand(
+			get([parent(%0)]/PUBLIC),
+			match(get(%0/OPENED_BY),%#)
+		),
+		u(%va/IS_TRANSPARENT,%0)
 	)
 -
 
@@ -4739,9 +4737,9 @@ think [ansi(hc,ANOMALY JOBS:)] Installing skins.
 
 &DEFAULT_MYJOBLIST [v(JOB_VA)]=
 	[ifelse(u(FN_ISNEW,%0,%1),[ansi(hr,*)],%b)]
-		%b
-		[setq(j,TDAS)]
-		[ansi(n,[rjust([last(name(%0))],5)]
+	%b
+	[setq(j,TDAS)]
+	[ansi(n,[rjust([last(name(%0))],5)]
 		%b
 		[iter(lnum(strlen(%qj)),u(DISPLAY_[mid(%qj,##,1)],%0,%1))]
 	)]
