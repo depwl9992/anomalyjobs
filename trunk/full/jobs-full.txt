@@ -2779,9 +2779,10 @@ think [ansi(hc,ANOMALY JOBS:)] Setting controlling attributes.
 # %1 = player to check access
 # %2 = job dbref
 #
+#
 &FN_MYACCESSCHECK [v(JOB_VA)]=
 	band(add(
-		elock(%0/speech,%1),
+		and(elock(%0/speech,%1),u(%va/IS_TRANSPARENT,%0)),
 		gt(member(get(%1/JOBSB),u(FN_OBJID,%0)),0),
 		ifelse(strlen(%2),
 			gt(member(get(%2/JOBACCESS),u(FN_OBJID,%1)),0),
