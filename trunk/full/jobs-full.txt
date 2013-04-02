@@ -4211,7 +4211,8 @@ think [ansi(hc,ANOMALY JOBS:)] Installing reports.
 	&MODIFIED_BY %0=%2;
 	@trigger parent(%0)/HOOK_%3=%0,%2,[parent(%0)],%1;
 	@trigger %va/TRIG_POST=%0,%3,%2,%1;
-	@trigger %va/TRIG_MAIL=%0,%3,%2,%1
+	@trigger %va/TRIG_MAIL=%0,%3,%2,%1;
+	@switch %4=1,@set %0/comment_%q0=no_inherit
 -
 
 &TRIG_APPLY [v(JOB_VA)]=

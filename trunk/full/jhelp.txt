@@ -1734,7 +1734,7 @@ Players:
   Sometimes it is necessary to engage the TRIG_ADD trigger from within your
   own code in order to add information to a job.
   
-    @trigger <Job Database>/TRIG_ADD=<%%0>,<%%1>,<%%2>,<%%3>
+    @trigger <Job Database>/TRIG_ADD=<%%0>,<%%1>,<%%2>,<%%3>,<%%4>
 
   It accepts the following arguments:
 
@@ -1742,6 +1742,7 @@ Players:
        %%1 = Comments to add
        %%2 = Player adding the comments
        %%3 = Action code to run
+       %%4 = If 1, automatically publish the comment, otherwise ignored
        
   You can pass any action code (or any three-letter code) to the trigger that
   you wish. There is no 'master list' of actions. However, unless the action 
