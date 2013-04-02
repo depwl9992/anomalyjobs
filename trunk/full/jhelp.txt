@@ -861,13 +861,15 @@ Players:
   [ansi(h,+myjobs/catchup)]
   [ansi(h,+myjobs/nospam)]
   [ansi(h,+myjob/nospam <#>)]
+  [ansi(h,+myjob/cc <#>=<player list>)]
   
   This suite of commands allows the submitter to view and modify jobs that they 
   have submitted to the system. When viewing a job that you own, you can only 
   see the comments that you have added, not comments added by others.  +myjobs
   lists your jobs; you can read an individual job or the last comment(s).  You
   can also add additional comments to the job.  Catching up jobs clears the new
-  job indicator. Nospam suppresses @mails for all jobs, or a single job.
+  job indicator. Nospam suppresses @mails for all jobs, or a single job. Using
+  the /cc switch will add other players to the job so they can see it too.
   
   Staff can give you access to jobs you could not otherwise see. In those 
   instances, you can see all comments added, not just those you have added.
@@ -878,6 +880,13 @@ Players:
   If staff has set a MYHELP attribute on the bucket, +myjob/help will display
   it, as well as special summary settings, which may be set with 
   +myjob/sumset.
+& myjob/cc
+ 
+  [ansi(h,+myjob/cc <#>=<player list>)]
+  
+  This command adds <player list> to the job source field, allowing other
+  players access to the job. The job must be in a myjobs-accessible bucket,
+  and the job must have been opened by you to allow the action.
 & myjob/help
 
   [ansi(h,+myjob/help <#>)]
