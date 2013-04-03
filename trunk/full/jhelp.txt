@@ -1655,7 +1655,7 @@ Players:
    Schedule: Feb 2, 2006
         Arc: Groundhog Day
       Staff: Starfleet
-   Synopsis: While celebrating Sid Vicious' birthday, Laco and O'Rielly are
+   Synopsis: While celebrating Sid Vicious' deathday, Laco and O'Rielly are
      thrown into a short-term temporal loop.
   -----------------------------------------------------------------------------
   
