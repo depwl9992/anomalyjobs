@@ -536,7 +536,7 @@ $+job/add *=*:
 		0*,{@pemit %#=Permission denied.},
 		10*,{@pemit %#=That is an invalid job number.},
 		110*,{@pemit %#=You do not have access to that job.},
-		1110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		1110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		11110*,{@pemit %#=That action is not available for that job.},
 		{
 			@pemit %#=Comments to [name(%q0)] added.;
@@ -590,7 +590,7 @@ $+job/approve *=*:
 		10*,{@pemit %#=Permission denied.},
 		110*,{@pemit %#=There is no job by that number.},
 		1110*,{@pemit %#=You do not have access to that job.},
-		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		111110*,{@pemit %#=That action is not available for that job.},
 		{
 			@pemit %#=
@@ -636,7 +636,7 @@ $+job/assign *=*:
 		10*,{@pemit %#=There is no player or jgroup by that name.},
 		110*,{@pemit %#=That is not a valid job number.},
 		1110*,{@pemit %#=You do not have access to that job.},
-		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		111110*,{@pemit %#=That action is not available on that job.},
 		1111110*,{@pemit %#=[ifelse(
 			strmatch(%1,+*),
@@ -752,7 +752,7 @@ $+job/complete *=*:
 		10*,{@pemit %#=Permission denied.},
 		110*,{@pemit %#=That is not a valid job #. See '+jobs/all' for valid jobs.},
 		1110*,{@pemit %#=Permission denied.},
-		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		111110*,{@pemit %#=That action is not available for that job.},
 		{
 			@pemit %#=[u(%va/FN_ADDSTAT_ART,parent(%q0),%q0)][u(%va/FN_ADDSTAT_ART,%vc,%q0)]You have completed [name(%q0)].;
@@ -805,7 +805,7 @@ $+job/delete *:
 		10*,{@pemit %#=Permission denied.},
 		110*,{@pemit %#=That is not a valid job number.},
 		1110*,{@pemit %#=You do not have access to that job.},
-		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		111110*,{@pemit %#=That action is not available for that job.},
 		{
 			@pemit %#=[u(%va/FN_ADDSTAT_ART,parent(%q0),%q0)][u(%va/FN_ADDSTAT_ART,%vc,%q0)]You have deleted [name(%q0)].;
@@ -832,7 +832,7 @@ $+job/deny *=*:
 		10*,{@pemit %#=Permission denied.},
 		110*,{@pemit %#=There is no job by that number.},
 		1110*,{@pemit %#=You cannot access that job.},
-		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		111110*,{@pemit %#=That action is not available for that job.},
 		{
 			@pemit %#=[u(%va/FN_ADDSTAT_ART,parent(%q0),%q0)][u(%va/FN_ADDSTAT_ART,%vc,%q0)]You have denied [name(%q0)].;
@@ -952,7 +952,7 @@ $+job/edit */*=*/*:
 		110*,{@pemit %#=That is an invalid job number.},
 		1110*,{@pemit %#=You do not have access to that job.},
 		11110*,{@pemit %#=You cannot modify that entry.},
-		111110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		111110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		1111110*,{@pemit %#=You can only edit entries that belong to you.},
 		11111110*,{@pemit %#=That action is not available for that job.},
 		{
@@ -989,7 +989,7 @@ $+job/esc *=*:
 		10*,{@pemit %#=That is not a valid job number.},
 		110*,{@pemit %#=You do not have access to that job.},
 		1110*,{@pemit %#=That is not a valid escalation code. Valid codes are red, yellow, and green.},
-		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		111110*,{@pemit %#=That action is not available for that job.},
 		{
 			@pemit %#=You have escalated job # %0 to %q2 status.;
@@ -1123,7 +1123,7 @@ $+job/mail *=*:
 		110*,{@pemit %#=There is no job by that number.},
 		1110*,{@pemit %#=You do not have access to that job.},
 		11110*,{@pemit %#=+job/mail cannot be used on the job because the bucket in which it is stored is not set PUBLIC %(+myjobs-accessible%).},
-		111110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		111110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		1111110*,{@pemit %#=That action is not available for that job.},
 		{
 			@pemit %#=You have mailed [u(%va/FN_PLAYERLIST,%q0)] about [name(%q0)], with the comments: [trim(%1)];
@@ -1190,7 +1190,7 @@ $+job/name *=*:
 		0*,{@pemit %#=Permission denied.},
 		10*,{@pemit %#=There is no job by that name.},
 		110*,{@pemit %#=You do not have access to that job.},
-		1110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		1110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		11110*,{@pemit %#=That action is not available for that job.},
 		{
 			@pemit %#=You have changed the name of [name(%q0)] to [trim(%1)].;
@@ -1282,7 +1282,7 @@ $+job/publish *:
 		1110*,{@pemit %#=There is no job by that number.},
 		11110*,{@pemit %#=You do not have access to that job.},
 		111110*,{@pemit %#=That job is not in a bucket that is accessible to +myjobs, so publication is moot.},
-		1111110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		1111110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		11111110*,{@pemit %#=That action is not available for that job.},
 		111111110*,
 		{
@@ -1318,7 +1318,7 @@ $+job/publish *=*:
 		10*,{@pemit %#=Permission denied.},
 		110*,{@pemit %#=There is no job by that number.},
 		1110*,{@pemit %#=You do not have access to that job.},
-		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		111110*,{@pemit %#=That job is not in a bucket that is accessible to +myjobs, so publication is moot.},
 		1111110*,{@pemit %#=That is not a valid comment number.},
 		11111110*,{@pemit %#=That action is not available for that job.},
@@ -1380,7 +1380,7 @@ $+job/set *=*:
 		1110*,{@pemit %#=That is an invalid setting. Valid job settings are:%r[u(%va/FN_ITEMIZE,
 			iter(lattr(%va/STATUS_*),last(get(%va/[itext(0)]),|),%b,|)
 		,|)].},
-		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		111110*,{@pemit %#=That action is not available for that job.},
 		{
 			@pemit %#=You set [name(%q0)] to [setr(1,last(get(%va/STATUS_%q2),|))] status.;
@@ -1429,7 +1429,7 @@ $+job/source *=*:
 		0*,{@pemit %#=Permission denied.},
 		10*,{@pemit %#=There is no job by that number.},
 		110*,{@pemit %#=You do not have access to that job.},
-		1110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		1110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		11110*,{@pemit %#='[extract(secure(trim(%1)),%q2,1)]' is not a valid player or jgroup.},
 		111110*,{@pemit %#=That action is not available for that job.},
 		{
@@ -1493,7 +1493,7 @@ $+job/sumset */*=*:
 				)].
 		},
 		1110*,{@pemit %#=You either can not use the +job/sumset command, or set that parameter.},
-		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		11110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		111110*,{@pemit %#=[u(%q0/ERROR_[trim(%1)]%q2)]},
 		1111110*,{@pemit %#=That action is not available for that job.},
 		{
@@ -1524,7 +1524,7 @@ $+job/tag *:
 		0*,{@pemit %#=Permission denied.},
 		10*,{@pemit %#=That is an invalid job number.},
 		110*,{@pemit %#=You do not have access to that job.},
-		1110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		1110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		11110*,{@pemit %#=That action is not available for that job.},
 		{
 			@switch 
@@ -1566,7 +1566,7 @@ $+job/trans *=*:
 	1110*,{@pemit %#=There is no bucket by that name. Type '[ansi(h,+buckets)]' for a list of valid buckets.},
 	11110*,{@pemit %#=You cannot move that job from there.},
 	111110*,{@pemit %#=You cannot move that job to there.},
-	1111110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+	1111110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 	{
 		@pemit %#=You have transferred the job from [u(%va/FN_BUCKETNAME,%q0)] to [name(%q1)].;
 		&going %q0;
@@ -1646,7 +1646,7 @@ $+job/untag *:
 		0*,{@pemit %#=Permission denied.},
 		10*,{@pemit %#=That is an invalid job number.},
 		110*,{@pemit %#=You do not have access to that job.},
-		1110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)]},
+		1110*,{@pemit %#=That job is presently [ifelse(u(%va/FN_HASATTRP,%q0,CHECKOUT),checked out to [name(first(get(%q0/CHECKOUT)))],locked)].},
 		11110*,{@pemit %#=That action is not available for that job.},
 		{
 			@switch 
