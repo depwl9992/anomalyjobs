@@ -1048,7 +1048,6 @@ Players:
   [ansi(h,+jobs/sort)]
   [ansi(h,+jobs/date)]
   [ansi(h,+jobs/due)]
-  [ansi(h,+jobs/stats)]
   [ansi(h,+jobs/overdue)]
   [ansi(h,+jobs/who <player>)]
   [ansi(h,+jobs/from <player>)]
@@ -1056,11 +1055,10 @@ Players:
   Using the /sort switch, you can get a list of jobs sorted by bucket. Using
   the /date switch, you can get a list of jobs sorted by when the job was last
   modified, with recent modifications at the bottom of the list. With the /due
-  switch, jobs are sorted from earlier to later due dates. Using the /stats
-  switch, you can get a list of basic statistics on the jobs system. With the
-  /overdue switch, you can list all jobs that are in overdue status. The /who
-  switch allows you to get a list of jobs that have been assigned to <player>.
-  The /from switch lists jobs opened by <player>.
+  switch, jobs are sorted from earlier to later due dates.With the /overdue 
+  switch, you can list all jobs that are in overdue status. The /who switch 
+  allows you to get a list of jobs that have been assigned to <player>. The 
+  /from switch lists jobs opened by <player>.
   
 & create
   Jobs can be created in a variety of ways. Players can use +pitch to put up
@@ -1190,7 +1188,7 @@ Players:
   open jobs, one through X, and resets the next available job number.
   
   Continued in: manage4
-& manage 4
+& manage4
   [ansi(h,+jobs/clean)]
   
   This command will remove all non-players from job entries.
